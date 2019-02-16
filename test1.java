@@ -26,13 +26,13 @@ public class test1{
         for(int k = 1; k <= N; k++){        	
             for(int i = 0; i < N; i++){           	
                 for(int j = 0; j < N; j++){               	
-                    if(i == j) continue;		
-		        dp[k][i][j] = Math.min(dp[k - 1][i][j], dp[k - 1][i][k - 1]+dp[k - 1][k - 1][j]);
-		        res[i][j] = Math.min(res[i][j], dp[k][i][j]);
+                    if(i == j) continue;
+		       dp[k][i][j] = Math.min(dp[k - 1][i][j], dp[k - 1][i][k - 1] + dp[k - 1][k - 1][j]);
+		       res[i][j] = Math.min(res[i][j], dp[k][i][j]);
 				}	
 			}
-		}	
-      return res;
+		}
+        return res;
 	}
 
     public static void main(String[] args) throws IOException {   	
@@ -49,9 +49,9 @@ public class test1{
         String str = null;
         while((str = bufferedReader.readLine()) != null){ 
             //read fromIndex(i), toIndex(j), edgeCost(dist) from file
-            int i=Integer.parseInt(str.split(",")[0]);
-            int j=Integer.parseInt(str.split(",")[1]);
-            int dist=Integer.parseInt(str.split(",")[2]);
+            int i = Integer.parseInt(str.split(",")[0]);
+            int j = Integer.parseInt(str.split(",")[1]);
+            int dist = Integer.parseInt(str.split(",")[2]);
 			nums[i][j] = dist;
 			nums[j][i] = dist;
 		}       
