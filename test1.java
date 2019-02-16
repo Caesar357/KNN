@@ -62,7 +62,7 @@ public class test1{
         System.out.println("Shortest path is: " + res[1][45]);
         long endTime = System.nanoTime();
         System.out.println("Astar Time: " + (endTime - startTime) + "ns");
-	    inputStream.close();
-	    bufferedReader.close();
+	inputStream.close();
+	bufferedReader.close();
 	}
 }
