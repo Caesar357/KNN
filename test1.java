@@ -26,9 +26,9 @@ public class test1{
         for(int k = 1; k <= N; k++){        	
             for(int i = 0; i < N; i++){           	
                 for(int j = 0; j < N; j++){               	
-                    if(i == j) continue;
-					dp[k][i][j] = Math.min(dp[k - 1][i][j], dp[k - 1][i][k - 1]+dp[k - 1][k - 1][j]);
-					res[i][j] = Math.min(res[i][j], dp[k][i][j]);
+                    if(i == j) continue;		
+		        dp[k][i][j] = Math.min(dp[k - 1][i][j], dp[k - 1][i][k - 1]+dp[k - 1][k - 1][j]);
+		        res[i][j] = Math.min(res[i][j], dp[k][i][j]);
 				}	
 			}
 		}	
