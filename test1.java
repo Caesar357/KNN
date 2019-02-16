@@ -13,17 +13,17 @@ public static int[][] apsp(int[][] nums) {
      int N = nums.length;
      int[][][] dp = new int[N + 1][N][N];
      int[][] res = new int[N][N];
-     for(int i = 0; i < N; i++){ 
-             for(int j = 0; j < N; j++) { 
-      //it dose not use any node from i to j
+     for(int i = 0; i < N; i++) {
+     for(int j = 0; j < N; j++) { 
+//it dose not use any node from i to j
 				dp[0][i][j] = nums[i][j];
 				res[i][j] = MAX_VALUE;
 //distance to itself is defined to be 0
-if(i == j) res[i][j] = 0;
+      if(i == j) res[i][j] = 0;
 			}
 		}
       for(int k = 1; k <= N; k++){
-      for(int i = 0; i < N; i++){
+          for(int i = 0; i < N; i++){
       for(int j = 0; j < N; j++){
                      if(i == j) continue;
 					dp[k][i][j] = Math.min(dp[k - 1][i][j], dp[k - 1][i][k - 1]+dp[k - 1][k - 1][j]);
@@ -49,7 +49,7 @@ public static void main(String[] args) throws IOException {
     while((str = bufferedReader.readLine()) != null)
 		{
     	
-         //read fromIndex(i), toIndex(j), edgeCost(dist) from file
+//read fromIndex(i), toIndex(j), edgeCost(dist) from file
          int i=Integer.parseInt(str.split(",")[0]);
          int j=Integer.parseInt(str.split(",")[1]);
          int dist=Integer.parseInt(str.split(",")[2]);
@@ -57,13 +57,14 @@ public static void main(String[] args) throws IOException {
 			nums[j][i] = dist;
 		}
     
+    
     int[][] res = apsp(nums);
-    //change the input of start and end points in res[][], we can get different value of shortest path
+//change the input of start and end points in res[][], we can get different value of shortest path
     long startTime = System.nanoTime();
     System.out.println("Shortest path is: " + res[1][45]);
     long endTime = System.nanoTime();
     System.out.println("Astar Time: " + (endTime - startTime) + "ns");
-    inputStream.close();
-    bufferedReader.close();
+	inputStream.close();
+	bufferedReader.close();
 	}
 }
