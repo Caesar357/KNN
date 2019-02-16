@@ -16,7 +16,7 @@ public static int[][] apsp(int[][] nums) {
      int[][] res = new int[N][N];
      for(int i = 0; i < N; i++) {
      for(int j = 0; j < N; j++) { 
-//it dose not use any node from i to j
+      //it dose not use any node from i to j
 				dp[0][i][j] = nums[i][j];
 				res[i][j] = MAX_VALUE;
 //distance to itself is defined to be 0
@@ -50,7 +50,7 @@ public static void main(String[] args) throws IOException {
     while((str = bufferedReader.readLine()) != null)
 		{
     	
-//read fromIndex(i), toIndex(j), edgeCost(dist) from file
+         //read fromIndex(i), toIndex(j), edgeCost(dist) from file
          int i=Integer.parseInt(str.split(",")[0]);
          int j=Integer.parseInt(str.split(",")[1]);
          int dist=Integer.parseInt(str.split(",")[2]);
@@ -58,9 +58,8 @@ public static void main(String[] args) throws IOException {
 			nums[j][i] = dist;
 		}
     
-    
     int[][] res = apsp(nums);
-//change the input of start and end points in res[][], we can get different value of shortest path
+    //change the input of start and end points in res[][], we can get different value of shortest path
     long startTime = System.nanoTime();
     System.out.println("Shortest path is: " + res[1][45]);
     long endTime = System.nanoTime();
