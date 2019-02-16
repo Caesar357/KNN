@@ -17,8 +17,8 @@ public class test1{
         for(int i = 0; i < N; i++) {
             for(int j = 0; j < N; j++) {             	
                 //it dose not use any node from i to j
-				dp[0][i][j] = nums[i][j];
-				res[i][j] = MAX_VALUE;
+		dp[0][i][j] = nums[i][j];
+		res[i][j] = MAX_VALUE;
                 //distance to itself is defined to be 0
                  if(i == j) res[i][j] = 0;               
 			}
