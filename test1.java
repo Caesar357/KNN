@@ -10,7 +10,6 @@ public class test1{
 //set 10000 as the largest number
 public static final int MAX_VALUE = 10000;
 public static int[][] apsp(int[][] nums) {
-	
      int N = nums.length;
      int[][][] dp = new int[N + 1][N][N];
      int[][] res = new int[N][N];
