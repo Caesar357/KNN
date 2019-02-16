@@ -13,8 +13,8 @@ public static int[][] apsp(int[][] nums) {
      int N = nums.length;
      int[][][] dp = new int[N + 1][N][N];
      int[][] res = new int[N][N];
-     for(int i = 0; i < N; i++) {
-     for(int j = 0; j < N; j++) { 
+     for(int i = 0; i < N; i++){ 
+             for(int j = 0; j < N; j++) { 
       //it dose not use any node from i to j
 				dp[0][i][j] = nums[i][j];
 				res[i][j] = MAX_VALUE;
